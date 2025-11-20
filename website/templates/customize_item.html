@@ -1,0 +1,25 @@
+<html>
+<body>
+    <form method = "POST" action = "{{url_for('item.customize', item_id=item.item_id)}}"> 
+        <h2>Customize Item</h2>
+        <img src="{{ url_for('static', filename=item.image) }}" alt="Item Image" style = "width: 250px; height :150px; object-fit:cover;">
+        <h3>Ingredients: </h3>
+        {%for ing in ingredients%}
+        <h4>
+            {{ing.ingredient_name}}
+            <br> 
+        <h4>
+        {%endfor%} 
+        {%for ing in added_ingredients%}
+        <label>
+            <input type = "checkbox" name = "ingredients" value = "{{ing.ingredient_id}}"> 
+            {{ing.ingredient_name}}
+            <br> 
+        </label>
+        {%endfor%}  
+      <input type="number" name="quantity" value="1" min="1"> 
+      <button type="submit">Add to Cart</button> 
+
+    </form> 
+</body>
+</html>

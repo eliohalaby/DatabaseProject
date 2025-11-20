@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" 
+              href="{{ url_for('static', filename='style.css') }}">
+    </head>
+
+    <body>
+        <div class="items-container"> 
+            {% for item in new_item %} 
+            <a href="{{ url_for('item.customize', item_id=item.item_id) }}" class="item-link">
+  <!-- The url for should match the route since it is the url that the route is using, since in route it accepts item_id, then in this url it should have item_id  -->
+
+                <div class="item-card">
+                <img src="{{ url_for('static', filename=item.image) }}" alt="Item Image" style = "width: 250px; height :150px; object-fit:cover;">
+                    <h3>{{ item.itemName }}</h3> 
+                    <h3>${{item.price}}</h3>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </body>
+</html>
