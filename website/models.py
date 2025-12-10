@@ -87,7 +87,7 @@ class Payment(db.Model):
     payment_id = db.Column(db.Integer, primary_key=True) 
     payment_method = db.Column(db.Enum(PaymentMethod), default = PaymentMethod.cash) 
     payment_date = db.Column(db.DateTime(timezone=True), default = func.now()) 
-    payment_status = db.Column(db.Enum(PaymentMethod), default = PaymentMethod.cash) 
+    payment_status = db.Column(db.Enum(PaymentMethod), default = PaymentStatus.pending) 
     discount = db.Column(db.Integer) 
     totalAmount = db.Column(db.Integer) 
     cardId = db.Column(db.Integer, db.ForeignKey('loyaltycard.card_id'))  

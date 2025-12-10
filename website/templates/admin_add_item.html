@@ -1,0 +1,31 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <form method="POST" action="{{ url_for('admin.admin_add_item') }}">
+        <div class="card">
+            <div class="row">   
+                <div class="column">
+                    <span class="label">Item Name: </span>
+                    <input type="text" name="item_name" class="input" required>
+                </div>
+                <div class="column"> 
+                    <span class="label">Description: </span> 
+                    <input type="text" name="description" class="input"> 
+                </div>
+                <div class="column">
+                    <span class="label">price: </span> 
+                    <input type="number" name="price" class="input" required> 
+                </div>
+            </div>
+            <div class="button-container">
+                <button type="submit">Add Item</button>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>

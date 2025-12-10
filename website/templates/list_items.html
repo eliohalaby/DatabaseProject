@@ -1,0 +1,23 @@
+<html>
+
+<head>
+
+</head>
+
+<body> 
+    <table>
+        <tr><th>ID</th><th>Name</th><th>price</th></tr> 
+        {%for item in items%} 
+        <tr>
+        <td>{{item.item_id}}</td> 
+        <td>{{item.itemName}}</td> 
+        <td>{{item.price}}</td> 
+        <td>
+            
+        </td>
+        </tr> 
+        {%endfor%} 
+    </table>
+</body>
+
+</html>
