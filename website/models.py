@@ -19,7 +19,8 @@ class Customer(db.Model, UserMixin):
     first_name = db.Column(db.String(150)) 
     last_name = db.Column(db.String(150)) 
     email = db.Column(db.String(150), unique = True) 
-    phone_number = db.Column(db.String(8), unique = True) 
+    phone_number = db.Column(db.String(8), unique = True)
+    password_hash = db.Column(db.String(255), nullable=False) 
 
 
 class Items(db.Model): 

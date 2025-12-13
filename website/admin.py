@@ -30,10 +30,12 @@ def create_user():
         last_name = request.form['userlastname'] 
         email = request.form['email'] 
         phone = request.form['phone'] 
+        password = request.form['password']
         new_user = Customer(first_name = first_name, 
                             last_name = last_name, 
                             email = email, 
                             phone_number = phone
+                            , password_hash = password
                             ) 
         db.session.add(new_user) 
         db.session.commit() 
