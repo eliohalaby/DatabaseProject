@@ -66,7 +66,7 @@ def login():
             session["role"] = "admin"
             session["email"] = email
             flash("Logged in as Admin.", "success")
-            return redirect(url_for("admin.list_items"))  # ✅ route exists
+            return redirect(url_for("admin.list_items"))
 
         # Customer login
         customer = Customer.query.filter_by(email=email).first()
@@ -82,7 +82,7 @@ def login():
         session["email"] = customer.email
 
         flash(f"Welcome {customer.first_name}!", "success")
-        return redirect(url_for("user_hp.homepage", user_id=customer.user_id))  # ✅ correct endpoint
+        return redirect(url_for("user_hp.homepage", user_id=customer.user_id))
 
     return render_template("login.html")
 

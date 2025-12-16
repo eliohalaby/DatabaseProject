@@ -2,6 +2,10 @@ from flask import Blueprint, request, render_template, redirect, url_for
 from .models import db, Items, Customer
 admin_bp = Blueprint('admin', __name__) 
 
+@admin_bp.route('/home')
+def home():
+    return render_template('admin_home.html')
+
 @admin_bp.route('/add_item', methods=['GET', 'POST']) 
 def admin_add_item(): 
     if request.method == "POST": 

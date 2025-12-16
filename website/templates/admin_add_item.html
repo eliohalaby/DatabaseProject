@@ -1,10 +1,40 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
+    <header>
+  <div class="top container">
+
+    <a href="{{ url_for('admin.home') }}">
+      <h3>Home</h3>
+    </a>
+
+    <a href="{{ url_for('admin.create_user') }}">
+      <h3>Create User</h3>
+    </a>
+
+    <a href="{{ url_for('admin.admin_add_item') }}">
+      <h3>Add Item</h3>
+    </a>
+    
+    <a href="{{ url_for('admin.list_items') }}">
+      <h3>List Item</h3>
+    </a>
+    
+
+    <a href="{{ url_for('auth.logout') }}">
+      <button class="logout-btn" type="button">Log out</button>
+    </a>
+
+  </div>
+</header>
+
     <form method="POST" action="{{ url_for('admin.admin_add_item') }}">
         <div class="card">
             <div class="row">   

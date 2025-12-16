@@ -1,5 +1,4 @@
-<html>
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,7 +6,10 @@
     <title>Home - Manager</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<header>
+
+
+<body>
+    <header>
   <div class="top container">
 
     <a href="{{ url_for('admin.home') }}">
@@ -33,21 +35,7 @@
 
   </div>
 </header>
-
-<body> 
-    <table>
-        <tr><th>ID</th><th>Name</th><th>price</th></tr> 
-        {%for item in items%} 
-        <tr>
-        <td>{{item.item_id}}</td> 
-        <td>{{item.itemName}}</td> 
-        <td>{{item.price}}</td> 
-        <td>
-            
-        </td>
-        </tr> 
-        {%endfor%} 
-    </table>
+    <h1>Welcome to the Admin Home Page</h1>
 </body>
-
 </html>
+

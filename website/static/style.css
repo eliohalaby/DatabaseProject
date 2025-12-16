@@ -13,3 +13,86 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     width: 250px;        /* Card width */
 }
+
+.container{
+    max-width: 1100px;
+    margin: auto;
+    width: 100%;
+}
+
+
+.top{
+    display:flex;
+    align-items:center;
+    justify-content: flex-start; /* keep items left-to-right */
+    gap: 12px;
+    padding:20px 0;
+    flex-wrap: nowrap; /* prevent vertical stacking */
+    overflow-x: auto; /* allow scrolling on very small screens */
+    
+
+}
+
+
+.top a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    padding: 4px 6px;
+}
+
+.top a h3 {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Navigation links - Package, Event, etc */
+.top a:not(.cart) {
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.top a:not(.cart):hover {
+    background: #f0f4f8;
+    color: #003766;
+}
+
+.top a:not(.cart):active {
+    background: #e0ebf5;
+}
+
+/* push the cart to the far right */
+.top a.cart {
+    margin-left: auto;
+}
+
+/* logout button styling */
+#logoutBtn {
+    margin-left: auto;
+    background: #003766;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    font-family: inherit;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    transition: background 0.2s;
+}
+
+#logoutBtn:hover {
+    background: #002d4d;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+#logoutBtn:active {
+    background: #001f36;
+}
